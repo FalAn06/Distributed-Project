@@ -1,0 +1,116 @@
+/* Estilos para el contenedor de productos */
+.products-container {
+  padding: 20px;
+}
+
+.category-menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.category-menu button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.category-menu button:hover {
+  background-color: #004d40;
+}
+
+/* Estilos para los productos */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+  color: #00796b;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #00796b;
+}
+
+/* Estilos para reseñas */
+.review-textarea {
+  width: 100%;
+  height: 60px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.add-review-button,
+.view-reviews-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-review-button:hover,
+.view-reviews-button:hover {
+  background-color: #004d40;
+}
+
+.reviews-container {
+  margin-top: 10px;
+}
+
+.review-card {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.view-cart-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #00796b;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.view-cart-button:hover {
+  background-color: #004d40;
+}

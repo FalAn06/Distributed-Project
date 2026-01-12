@@ -1,0 +1,95 @@
+/* Estilo del contenedor principal de configuración */
+.settings-container {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Fondo de gradiente vibrante */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Estilo del título principal */
+h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Sección de cada formulario */
+.form-section {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo de los inputs */
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #00bcd4;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f1f8f7;
+  transition: border-color 0.3s ease;
+}
+
+/* Estilo al enfocar los inputs */
+input:focus {
+  border-color: #00796b;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Estilo de los botones */
+button {
+  background-color: #00796b;
+  color: white;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Hover para los botones */
+button:hover {
+  background-color: #004d40;
+}
+
+/* Estilo del botón de eliminar cuenta */
+.delete-account-button {
+  background-color: #d32f2f;
+}
+
+.delete-account-button:hover {
+  background-color: #9a0007;
+}
+
+/* Estilo del botón para regresar */
+.back-button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 0.75rem 2rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #00838f;
+}
