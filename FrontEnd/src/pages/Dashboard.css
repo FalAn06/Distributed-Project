@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Fondo degradado animado */
+  background: linear-gradient(45deg, #e9e6ec, #2575fc); /* Fondo degradado animado */
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite; /* Animación de fondo */
   padding: 2rem;

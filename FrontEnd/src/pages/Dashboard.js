@@ -88,7 +88,7 @@ function Dashboard() {
       </div>
 
       {/* Título principal */}
-      <h1 className="welcome-title">Bienvenido a Water Market</h1>
+      <h1 className="welcome-title">Bienvenido a Biblioteca Integral FICA</h1>
 
       {/* Perfil */}
       <div className="profile-container">

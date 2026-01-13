@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Color degradado */
+  background: linear-gradient(45deg, #f0ecf3, #2575fc); /* Color degradado */
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite; /* Animación de fondo */
 }

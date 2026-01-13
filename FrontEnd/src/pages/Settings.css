@@ -1,6 +1,6 @@
 /* Estilo del contenedor principal de configuración */
 .settings-container {
-  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Fondo de gradiente vibrante */
+  background: linear-gradient(45deg, #f0edf3, #2575fc); /* Fondo de gradiente vibrante */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
