@@ -23,7 +23,7 @@ function Settings() {
   // Función para cambiar la contraseña
   const handlePasswordChange = async () => {
     try {
-      const res = await fetch('http://50.19.246.209:4567/change-password', {
+      const res = await fetch('http://52.3.240.18:8005/change-password', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, oldPassword, newPassword })
@@ -46,7 +46,7 @@ function Settings() {
     const confirmDelete = window.confirm('¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es irreversible.');
     if (confirmDelete) {
       try {
-        const res = await fetch(`http://50.19.246.209:4569/delete_user?email=${email}`, {  
+        const res = await fetch(`http://52.3.240.18:8004/delete_user?email=${email}`, {  
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
