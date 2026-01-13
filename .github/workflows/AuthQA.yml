@@ -1,0 +1,52 @@
+name: Deploy Authentication Services to EC2
+
+on:
+  push:
+    branches:
+      - test  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Set up SSH key for EC2
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker images for login and register services
+      run: |
+        docker build -t chamorrito/login-service ./Authentication-Domain/Login
+        docker build -t chamorrito/register-service ./Authentication-Domain/Register
+
+    - name: Push images to Docker Hub
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker push chamorrito/login-service
+        docker push chamorrito/register-service
+
+    - name: Deploy services to EC2
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: 3.92.9.164
+        username: ec2-user
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          # De
+          docker stop login-service || true
+          docker rm login-service || true
+          docker stop register-service || true
+          docker rm register-service || true
+
+          # D
+          docker pull chamorrito/login-service
+          docker pull chamorrito/register-service
+
+          # Eje
+          docker run -d --name login-service -p 8001:8001 --restart unless-stopped chamorrito/login-service
+          docker run -d --name register-service -p 8002:8002 --restart unless-stopped chamorrito/register-service

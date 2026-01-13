@@ -12,7 +12,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://54.162.152.155/api/login', {
+      const res = await axios.post('http://3.92.9.164:8001/login', {
         email,
         password,
         captcha: captchaText // Incluir el captcha ingresado por el usuario

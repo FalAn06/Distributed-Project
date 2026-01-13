@@ -10,7 +10,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post('http://54.162.152.155/api/register', {
+      const res = await axios.post('http://3.92.9.164:8002/register', {
         email,
         password
       });
