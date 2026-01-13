@@ -28,17 +28,17 @@ function Login() {
 
   return (
     <div className="login-container">
+
+      {/* LOGO SUPERIOR (FUERA DE LA CAJA) */}
+      <img
+        src="/logouce.png"
+        alt="Logo Biblioteca FICA"
+        className="login-logo-top"
+      />
+
       <div className="login-box">
 
-        {/* LOGO DESDE PUBLIC */}
-        <img
-          src="/logoUCE.png"
-          alt="Logo Biblioteca FICA"
-          className="login-logo-img"
-        />
-
         <h1 className="login-logo">Biblioteca Integral FICA</h1>
-
         <h2 className="login-title">Iniciar sesión</h2>
 
         <input
