@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
@@ -6,8 +6,8 @@ import './Login.css';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [captcha, setCaptcha] = useState(null); // Estado para guardar la imagen del captcha
-  const [captchaText, setCaptchaText] = useState(''); // Estado para guardar el texto ingresado por el usuario
+  const [captcha, setCaptcha] = useState(null);
+  const [captchaText, setCaptchaText] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -15,7 +15,7 @@ function Login() {
       const res = await axios.post('http://3.92.9.164:8001/login', {
         email,
         password,
-        captcha: captchaText // Incluir el captcha ingresado por el usuario
+        captcha: captchaText
       });
 
       localStorage.setItem('token', res.data.token);
@@ -29,10 +29,17 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-box">
-        {/* Logo Water Market */}
-        <h1 className="login-logo">Water Market</h1>
 
-        <h2 className="login-title">Iniciar sesión </h2>
+        {/* LOGO DESDE PUBLIC */}
+        <img
+          src="/logoUCE.png"
+          alt="Logo Biblioteca FICA"
+          className="login-logo-img"
+        />
+
+        <h1 className="login-logo">Biblioteca Integral FICA</h1>
+
+        <h2 className="login-title">Iniciar sesión</h2>
 
         <input
           type="text"
@@ -48,7 +55,6 @@ function Login() {
           className="login-input"
         />
 
-        {/* Mostrar el captcha */}
         {captcha && (
           <div>
             <img src={captcha} alt="captcha" />
@@ -75,6 +81,7 @@ function Login() {
             Eres usuario Root, da click aquí
           </Link>
         </p>
+
       </div>
     </div>
   );

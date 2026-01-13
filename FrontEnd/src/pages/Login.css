@@ -1,109 +1,142 @@
-/* Estilo general del contenedor de la página */
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================ */
 .login-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Color degradado */
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #2575fc,
+    #ffffff
+  );
   background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite; /* Animación de fondo */
+  animation: gradientAnimation 15s ease infinite;
 }
 
-/* Animación de fondo de gradiente */
+/* Animación del fondo */
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Caja de login con fondo blanco y bordes redondeados */
+/* ===============================
+   CAJA DE LOGIN
+================================ */
 .login-box {
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con algo de transparencia */
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 3rem;
-  border-radius: 12px; /* Bordes más redondeados */
+  border-radius: 14px;
   width: 100%;
   max-width: 380px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
-  border: 1px solid #00bcd4; /* Bordes de color agua */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #2575fc;
 }
 
-/* Logo Water Market */
+/* ===============================
+   LOGO IMAGEN
+================================ */
+.login-logo-img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 90px;
+  height: auto;
+}
+
+/* ===============================
+   LOGO TEXTO (WATER MARKET)
+================================ */
 .login-logo {
-  font-size: 2.5rem; /* Tamaño grande */
+  font-size: 2.2rem;
   font-weight: bold;
   text-align: center;
-  color: #6a11cb; /* Morado */
-  margin-bottom: 1.5rem;
+  color: #2575fc;
+  margin-bottom: 1rem;
   font-family: 'Arial', sans-serif;
 }
 
-/* Título de login */
+/* ===============================
+   TITULO
+================================ */
 .login-title {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #6a11cb; /* Morado */
+  color: #2575fc;
   font-family: 'Arial', sans-serif;
 }
 
-/* Estilo de los inputs con un toque fresco */
+/* ===============================
+   INPUTS
+================================ */
 .login-input {
   width: 100%;
   margin-bottom: 1rem;
   padding: 1rem;
-  border: 1px solid #6a11cb; /* Bordes morados */
-  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid #2575fc;
+  border-radius: 8px;
   font-size: 1rem;
-  background-color: #f1f8f7; /* Fondo suave */
-  transition: border-color 0.3s ease;
+  background-color: #f4f8ff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Cuando el input es enfocado */
 .login-input:focus {
-  border-color: #2575fc; /* Resaltar con un color azul */
+  border-color: #1a5fd0;
   outline: none;
-  background-color: #ffffff; /* Fondo blanco cuando se enfoca */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.2);
 }
 
-/* Botón de login con un color azul */
+/* ===============================
+   BOTÓN LOGIN
+================================ */
 .login-button {
   width: 100%;
   padding: 1rem;
-  background-color: #2575fc; /* Azul */
-  color: white;
+  background-color: #2575fc;
+  color: #ffffff;
   font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease;
   font-family: 'Arial', sans-serif;
 }
 
-/* Hover para el botón */
 .login-button:hover {
-  background-color: #6a11cb; /* Morado oscuro al pasar el cursor */
+  background-color: #1a5fd0;
+  transform: translateY(-1px);
 }
 
-/* Pie de página con texto más suave */
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* ===============================
+   FOOTER
+================================ */
 .login-footer {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   text-align: center;
   font-size: 0.875rem;
-  color: #6a11cb; /* Morado suave */
+  color: #2575fc;
   font-family: 'Arial', sans-serif;
 }
 
-/* Enlaces del pie de página */
+/* ===============================
+   LINKS
+================================ */
 .login-link {
-  color: #2575fc; /* Azul */
+  color: #2575fc;
   text-decoration: none;
   font-weight: bold;
-  font-family: 'Arial', sans-serif;
 }
 
-/* Hover de los enlaces */
 .login-link:hover {
   text-decoration: underline;
-  color: #6a11cb; /* Morado oscuro */
+  color: #1a5fd0;
 }
