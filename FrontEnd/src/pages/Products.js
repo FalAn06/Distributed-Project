@@ -5,13 +5,13 @@ import './Products.css';
 
 const Products = () => {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState('botellones');
+  const [selectedCategory, setSelectedCategory] = useState('matematica');
   const [reviews, setReviews] = useState({}); // Estado para las reseñas cargadas (por producto)
   const [reviewText, setReviewText] = useState(''); // Estado para el texto de la reseña
   const [cartItems, setCartItems] = useState([]); // Estado para el carrito
 
   const products = {
-    botellones: [
+    matematica: [
       {
         name: 'Botellón de 5L',
         description: 'Ideal para familias grandes',
@@ -41,63 +41,63 @@ const Products = () => {
         productId: '126',
       },
     ],
-    valvulas: [
+    fisica: [
       {
         name: 'Válvula de cierre',
         description: 'Válvula para botellones de agua',
         price: '$5',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/valvulas/valvudecierre.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libro%20fisica/fisica%201.jpg?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJHMEUCICEX6%2Bs%2FFZ3U6tp%2FNKwbUC8ikm4rX%2BQNI%2BIoXr8w2Uf5AiEAyQOlKZJnueiY1PvUn%2Bxo1gDGn8wUSmNTsh4O9pBU7X8q2wMIExAEGgw3OTIzODQxMjA1MzMiDJCsprKGh4u%2BZl63eCq4A3IbNBsMuM5E3siITC2NUuzBKGFS6efrDcn%2B5G4i4O%2B8Asb6dobITa%2BXRSkGtjqRjtjSWWYN3FrBgYHmy%2F7pvloh3FLG2w6yBkpPz%2FpxhJuwEk9%2BoQXJS%2FQksHw2r0xd%2BiVPmFYCTXprqDFfkE56wRhXJ9KK41vsXLnttoPSiMxU45mMekULrrpg9fpAIdupO1EiXNk8H3zE3nCtXy%2BFVxX%2BkcB52zNWxMi7DY28vItVEB5WFk5VRpTJcOy76QgyuygnVJsRvNMkWG90zp5Z2Q8TjVdw7o9CUiT6vyC9S0h1pw5QLHA8mw1x1WR6eOKoXC1PtnoqgICUwqmAPD185ffaZIiuNt84V4AXTLWneMwJCO2vhJX1l8HbV19tU4D0HnhI49G24DftTtfOhZxmSWlwuRYOeOBVysFaqyzKsi34mkascXBW8SOsUVDOBjlErh%2FdtVwEcxX1SR2tdExsemLI3nIvHkZTZXLJSyTZcgtgiBrAo5YSSmSBPJd%2FCcLoI%2FV%2FCStPbClHIWK%2BJcS%2BfXRWz0xmQFo%2Fh%2BWMMC%2BWWqcQ3GQa4FT55qpklT8tzxc%2BezRVPEPxvcMuMPW3m8sGOrcCj3r4lHdht4TtoH23qejHz3LqzjFWPoDBZEr6lb%2BBQTvwN9QQsBNo9L0COeP%2FSavGT%2F672ogAd40BMxYetwyrE2hEeH25fyFGX%2BaxqLrGYnsbGPcwZ32216QFpwFtErDHGr2x0xlWMkM5G15uYW%2B5n0DR7Pnh11cgewzga4X88vQc1ygb3S7QuxYGJwzf1M1SoMVCKBUTM6Bj4kdJZq4GmF%2FQ%2FCsqPA8Mu7kj18yd59voS6A16aNQMqtjLvLozEnEo2Ed09%2Bv8XCowX9cOdKeHB3%2But1WjCEPLjGzkuapCFxys95aApy1YByD%2FGHf%2Fijdh37kw6F7%2BYgod6g8JUHjh4TL4lXCRjYsYtXqDPFoyKdvPFfn4zJATOCRd8qY2avcGG9xHXCPfW7%2FZp88b5Wv6PPRq1IofJo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KT2YDT5NG%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021258Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=296101aa5a680c45a63d4d84c5d9ab85457b98432225f3a7702d06bb875ec755',
         productId: '223',
       },
       {
         name: 'Válvula de seguridad',
         description: 'Para evitar fugas de agua',
         price: '$8',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/valvulas/V%C3%A1lvula%20de%20seguridad.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libro%20fisica/fisica%202.webp?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJHMEUCICEX6%2Bs%2FFZ3U6tp%2FNKwbUC8ikm4rX%2BQNI%2BIoXr8w2Uf5AiEAyQOlKZJnueiY1PvUn%2Bxo1gDGn8wUSmNTsh4O9pBU7X8q2wMIExAEGgw3OTIzODQxMjA1MzMiDJCsprKGh4u%2BZl63eCq4A3IbNBsMuM5E3siITC2NUuzBKGFS6efrDcn%2B5G4i4O%2B8Asb6dobITa%2BXRSkGtjqRjtjSWWYN3FrBgYHmy%2F7pvloh3FLG2w6yBkpPz%2FpxhJuwEk9%2BoQXJS%2FQksHw2r0xd%2BiVPmFYCTXprqDFfkE56wRhXJ9KK41vsXLnttoPSiMxU45mMekULrrpg9fpAIdupO1EiXNk8H3zE3nCtXy%2BFVxX%2BkcB52zNWxMi7DY28vItVEB5WFk5VRpTJcOy76QgyuygnVJsRvNMkWG90zp5Z2Q8TjVdw7o9CUiT6vyC9S0h1pw5QLHA8mw1x1WR6eOKoXC1PtnoqgICUwqmAPD185ffaZIiuNt84V4AXTLWneMwJCO2vhJX1l8HbV19tU4D0HnhI49G24DftTtfOhZxmSWlwuRYOeOBVysFaqyzKsi34mkascXBW8SOsUVDOBjlErh%2FdtVwEcxX1SR2tdExsemLI3nIvHkZTZXLJSyTZcgtgiBrAo5YSSmSBPJd%2FCcLoI%2FV%2FCStPbClHIWK%2BJcS%2BfXRWz0xmQFo%2Fh%2BWMMC%2BWWqcQ3GQa4FT55qpklT8tzxc%2BezRVPEPxvcMuMPW3m8sGOrcCj3r4lHdht4TtoH23qejHz3LqzjFWPoDBZEr6lb%2BBQTvwN9QQsBNo9L0COeP%2FSavGT%2F672ogAd40BMxYetwyrE2hEeH25fyFGX%2BaxqLrGYnsbGPcwZ32216QFpwFtErDHGr2x0xlWMkM5G15uYW%2B5n0DR7Pnh11cgewzga4X88vQc1ygb3S7QuxYGJwzf1M1SoMVCKBUTM6Bj4kdJZq4GmF%2FQ%2FCsqPA8Mu7kj18yd59voS6A16aNQMqtjLvLozEnEo2Ed09%2Bv8XCowX9cOdKeHB3%2But1WjCEPLjGzkuapCFxys95aApy1YByD%2FGHf%2Fijdh37kw6F7%2BYgod6g8JUHjh4TL4lXCRjYsYtXqDPFoyKdvPFfn4zJATOCRd8qY2avcGG9xHXCPfW7%2FZp88b5Wv6PPRq1IofJo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KT2YDT5NG%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021346Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=8f89b394940d8faefa71cd861334ba6333a325a1eb135cd7841e11221fa41eba',
         productId: '224',
       },
       {
         name: 'Válvula de presión',
         description: 'Regula la presión del agua',
         price: '$12',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/valvulas/V%C3%A1lvula%20de%20presi%C3%B3n.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libro%20fisica/fisica%203.jpg?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJHMEUCICEX6%2Bs%2FFZ3U6tp%2FNKwbUC8ikm4rX%2BQNI%2BIoXr8w2Uf5AiEAyQOlKZJnueiY1PvUn%2Bxo1gDGn8wUSmNTsh4O9pBU7X8q2wMIExAEGgw3OTIzODQxMjA1MzMiDJCsprKGh4u%2BZl63eCq4A3IbNBsMuM5E3siITC2NUuzBKGFS6efrDcn%2B5G4i4O%2B8Asb6dobITa%2BXRSkGtjqRjtjSWWYN3FrBgYHmy%2F7pvloh3FLG2w6yBkpPz%2FpxhJuwEk9%2BoQXJS%2FQksHw2r0xd%2BiVPmFYCTXprqDFfkE56wRhXJ9KK41vsXLnttoPSiMxU45mMekULrrpg9fpAIdupO1EiXNk8H3zE3nCtXy%2BFVxX%2BkcB52zNWxMi7DY28vItVEB5WFk5VRpTJcOy76QgyuygnVJsRvNMkWG90zp5Z2Q8TjVdw7o9CUiT6vyC9S0h1pw5QLHA8mw1x1WR6eOKoXC1PtnoqgICUwqmAPD185ffaZIiuNt84V4AXTLWneMwJCO2vhJX1l8HbV19tU4D0HnhI49G24DftTtfOhZxmSWlwuRYOeOBVysFaqyzKsi34mkascXBW8SOsUVDOBjlErh%2FdtVwEcxX1SR2tdExsemLI3nIvHkZTZXLJSyTZcgtgiBrAo5YSSmSBPJd%2FCcLoI%2FV%2FCStPbClHIWK%2BJcS%2BfXRWz0xmQFo%2Fh%2BWMMC%2BWWqcQ3GQa4FT55qpklT8tzxc%2BezRVPEPxvcMuMPW3m8sGOrcCj3r4lHdht4TtoH23qejHz3LqzjFWPoDBZEr6lb%2BBQTvwN9QQsBNo9L0COeP%2FSavGT%2F672ogAd40BMxYetwyrE2hEeH25fyFGX%2BaxqLrGYnsbGPcwZ32216QFpwFtErDHGr2x0xlWMkM5G15uYW%2B5n0DR7Pnh11cgewzga4X88vQc1ygb3S7QuxYGJwzf1M1SoMVCKBUTM6Bj4kdJZq4GmF%2FQ%2FCsqPA8Mu7kj18yd59voS6A16aNQMqtjLvLozEnEo2Ed09%2Bv8XCowX9cOdKeHB3%2But1WjCEPLjGzkuapCFxys95aApy1YByD%2FGHf%2Fijdh37kw6F7%2BYgod6g8JUHjh4TL4lXCRjYsYtXqDPFoyKdvPFfn4zJATOCRd8qY2avcGG9xHXCPfW7%2FZp88b5Wv6PPRq1IofJo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KT2YDT5NG%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021404Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=b93964ccb3b6bf4b57361897a635cfa579d017e6f08ac48c6743509564ddc6f7',
         productId: '225',
       },
       {
         name: 'Válvula de drenaje',
         description: 'Ideal para sistemas de filtrado',
         price: '$6',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/valvulas/V%C3%A1lvula%20de%20drenaje.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libro%20fisica/fisica%204.jpg?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJHMEUCICEX6%2Bs%2FFZ3U6tp%2FNKwbUC8ikm4rX%2BQNI%2BIoXr8w2Uf5AiEAyQOlKZJnueiY1PvUn%2Bxo1gDGn8wUSmNTsh4O9pBU7X8q2wMIExAEGgw3OTIzODQxMjA1MzMiDJCsprKGh4u%2BZl63eCq4A3IbNBsMuM5E3siITC2NUuzBKGFS6efrDcn%2B5G4i4O%2B8Asb6dobITa%2BXRSkGtjqRjtjSWWYN3FrBgYHmy%2F7pvloh3FLG2w6yBkpPz%2FpxhJuwEk9%2BoQXJS%2FQksHw2r0xd%2BiVPmFYCTXprqDFfkE56wRhXJ9KK41vsXLnttoPSiMxU45mMekULrrpg9fpAIdupO1EiXNk8H3zE3nCtXy%2BFVxX%2BkcB52zNWxMi7DY28vItVEB5WFk5VRpTJcOy76QgyuygnVJsRvNMkWG90zp5Z2Q8TjVdw7o9CUiT6vyC9S0h1pw5QLHA8mw1x1WR6eOKoXC1PtnoqgICUwqmAPD185ffaZIiuNt84V4AXTLWneMwJCO2vhJX1l8HbV19tU4D0HnhI49G24DftTtfOhZxmSWlwuRYOeOBVysFaqyzKsi34mkascXBW8SOsUVDOBjlErh%2FdtVwEcxX1SR2tdExsemLI3nIvHkZTZXLJSyTZcgtgiBrAo5YSSmSBPJd%2FCcLoI%2FV%2FCStPbClHIWK%2BJcS%2BfXRWz0xmQFo%2Fh%2BWMMC%2BWWqcQ3GQa4FT55qpklT8tzxc%2BezRVPEPxvcMuMPW3m8sGOrcCj3r4lHdht4TtoH23qejHz3LqzjFWPoDBZEr6lb%2BBQTvwN9QQsBNo9L0COeP%2FSavGT%2F672ogAd40BMxYetwyrE2hEeH25fyFGX%2BaxqLrGYnsbGPcwZ32216QFpwFtErDHGr2x0xlWMkM5G15uYW%2B5n0DR7Pnh11cgewzga4X88vQc1ygb3S7QuxYGJwzf1M1SoMVCKBUTM6Bj4kdJZq4GmF%2FQ%2FCsqPA8Mu7kj18yd59voS6A16aNQMqtjLvLozEnEo2Ed09%2Bv8XCowX9cOdKeHB3%2But1WjCEPLjGzkuapCFxys95aApy1YByD%2FGHf%2Fijdh37kw6F7%2BYgod6g8JUHjh4TL4lXCRjYsYtXqDPFoyKdvPFfn4zJATOCRd8qY2avcGG9xHXCPfW7%2FZp88b5Wv6PPRq1IofJo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KT2YDT5NG%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021424Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=37c5d374c1b8903404a74f7786955b6604377ba8a1e886012a1e08dc11fecbeb',
         productId: '226',
       },
     ],
-    filtros: [
+    variado: [
       {
         name: 'Filtro de agua básico',
         description: 'Filtro de agua doméstico',
         price: '$20',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/filtros/Filtro%20de%20agua%20b%C3%A1sico.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libros%20variados/va%201.jpg?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJHMEUCICEX6%2Bs%2FFZ3U6tp%2FNKwbUC8ikm4rX%2BQNI%2BIoXr8w2Uf5AiEAyQOlKZJnueiY1PvUn%2Bxo1gDGn8wUSmNTsh4O9pBU7X8q2wMIExAEGgw3OTIzODQxMjA1MzMiDJCsprKGh4u%2BZl63eCq4A3IbNBsMuM5E3siITC2NUuzBKGFS6efrDcn%2B5G4i4O%2B8Asb6dobITa%2BXRSkGtjqRjtjSWWYN3FrBgYHmy%2F7pvloh3FLG2w6yBkpPz%2FpxhJuwEk9%2BoQXJS%2FQksHw2r0xd%2BiVPmFYCTXprqDFfkE56wRhXJ9KK41vsXLnttoPSiMxU45mMekULrrpg9fpAIdupO1EiXNk8H3zE3nCtXy%2BFVxX%2BkcB52zNWxMi7DY28vItVEB5WFk5VRpTJcOy76QgyuygnVJsRvNMkWG90zp5Z2Q8TjVdw7o9CUiT6vyC9S0h1pw5QLHA8mw1x1WR6eOKoXC1PtnoqgICUwqmAPD185ffaZIiuNt84V4AXTLWneMwJCO2vhJX1l8HbV19tU4D0HnhI49G24DftTtfOhZxmSWlwuRYOeOBVysFaqyzKsi34mkascXBW8SOsUVDOBjlErh%2FdtVwEcxX1SR2tdExsemLI3nIvHkZTZXLJSyTZcgtgiBrAo5YSSmSBPJd%2FCcLoI%2FV%2FCStPbClHIWK%2BJcS%2BfXRWz0xmQFo%2Fh%2BWMMC%2BWWqcQ3GQa4FT55qpklT8tzxc%2BezRVPEPxvcMuMPW3m8sGOrcCj3r4lHdht4TtoH23qejHz3LqzjFWPoDBZEr6lb%2BBQTvwN9QQsBNo9L0COeP%2FSavGT%2F672ogAd40BMxYetwyrE2hEeH25fyFGX%2BaxqLrGYnsbGPcwZ32216QFpwFtErDHGr2x0xlWMkM5G15uYW%2B5n0DR7Pnh11cgewzga4X88vQc1ygb3S7QuxYGJwzf1M1SoMVCKBUTM6Bj4kdJZq4GmF%2FQ%2FCsqPA8Mu7kj18yd59voS6A16aNQMqtjLvLozEnEo2Ed09%2Bv8XCowX9cOdKeHB3%2But1WjCEPLjGzkuapCFxys95aApy1YByD%2FGHf%2Fijdh37kw6F7%2BYgod6g8JUHjh4TL4lXCRjYsYtXqDPFoyKdvPFfn4zJATOCRd8qY2avcGG9xHXCPfW7%2FZp88b5Wv6PPRq1IofJo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KT2YDT5NG%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021732Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=72bb8cefe1368952bb57c0e5523582b23ed15554c3acab62b3eaeaa8a6c59e30',
         productId: '323',
       },
       {
         name: 'Filtro de agua industrial',
         description: 'Filtrado para grandes cantidades de agua',
         price: '$50',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/filtros/Filtro%20de%20agua%20industrial.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libros%20variados/va%202.webp?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJHMEUCICEX6%2Bs%2FFZ3U6tp%2FNKwbUC8ikm4rX%2BQNI%2BIoXr8w2Uf5AiEAyQOlKZJnueiY1PvUn%2Bxo1gDGn8wUSmNTsh4O9pBU7X8q2wMIExAEGgw3OTIzODQxMjA1MzMiDJCsprKGh4u%2BZl63eCq4A3IbNBsMuM5E3siITC2NUuzBKGFS6efrDcn%2B5G4i4O%2B8Asb6dobITa%2BXRSkGtjqRjtjSWWYN3FrBgYHmy%2F7pvloh3FLG2w6yBkpPz%2FpxhJuwEk9%2BoQXJS%2FQksHw2r0xd%2BiVPmFYCTXprqDFfkE56wRhXJ9KK41vsXLnttoPSiMxU45mMekULrrpg9fpAIdupO1EiXNk8H3zE3nCtXy%2BFVxX%2BkcB52zNWxMi7DY28vItVEB5WFk5VRpTJcOy76QgyuygnVJsRvNMkWG90zp5Z2Q8TjVdw7o9CUiT6vyC9S0h1pw5QLHA8mw1x1WR6eOKoXC1PtnoqgICUwqmAPD185ffaZIiuNt84V4AXTLWneMwJCO2vhJX1l8HbV19tU4D0HnhI49G24DftTtfOhZxmSWlwuRYOeOBVysFaqyzKsi34mkascXBW8SOsUVDOBjlErh%2FdtVwEcxX1SR2tdExsemLI3nIvHkZTZXLJSyTZcgtgiBrAo5YSSmSBPJd%2FCcLoI%2FV%2FCStPbClHIWK%2BJcS%2BfXRWz0xmQFo%2Fh%2BWMMC%2BWWqcQ3GQa4FT55qpklT8tzxc%2BezRVPEPxvcMuMPW3m8sGOrcCj3r4lHdht4TtoH23qejHz3LqzjFWPoDBZEr6lb%2BBQTvwN9QQsBNo9L0COeP%2FSavGT%2F672ogAd40BMxYetwyrE2hEeH25fyFGX%2BaxqLrGYnsbGPcwZ32216QFpwFtErDHGr2x0xlWMkM5G15uYW%2B5n0DR7Pnh11cgewzga4X88vQc1ygb3S7QuxYGJwzf1M1SoMVCKBUTM6Bj4kdJZq4GmF%2FQ%2FCsqPA8Mu7kj18yd59voS6A16aNQMqtjLvLozEnEo2Ed09%2Bv8XCowX9cOdKeHB3%2But1WjCEPLjGzkuapCFxys95aApy1YByD%2FGHf%2Fijdh37kw6F7%2BYgod6g8JUHjh4TL4lXCRjYsYtXqDPFoyKdvPFfn4zJATOCRd8qY2avcGG9xHXCPfW7%2FZp88b5Wv6PPRq1IofJo%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KT2YDT5NG%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021751Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=3c474587224475bb7946871221a5e5c6acab5d01085d934eafc24d6ec4c7164b',
         productId: '324',
       },
       {
         name: 'Filtro purificador',
         description: 'Purifica el agua eliminando bacterias',
         price: '$35',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/filtros/Filtro%20purificador.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libros%20variados/va%203.jpg?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJIMEYCIQCXS00ldD%2FRpFOwkeVUN4JYEDh4wOxhIud7K8X1ociEOQIhAJBDwptih%2BTQhYGre02%2Fq0sYB3dw%2FbM6qSoPgMC6nx0lKtsDCBMQBBoMNzkyMzg0MTIwNTMzIgwF5ex5QwTnrlOWOj4quAO%2BFOxyvlnjAmtN1TCeOAwPE37%2Bl2cuhphn27QlCBlNT%2BpSKFdd2Omd8TtdPHQPOPrIoCwn6PLOj%2Fi9ZLt6wWZCIeiYpVQPGdJLASzqu%2FjjRcqNM2cLkyu%2F6Wj6Jo0XoRVvwlKOKb7BCwVCPnQ4S3e14YSzqjRoN1dE539Z21hELcgfnjrRU6vUmJbWpVAHDr3ORPeYI3Uejbt%2BmLE1r2GyXJsCjLrYA%2BgqUyJWtWyubQW0agKTuTBTSfQzDwXbeHAFLQ%2ByHWC%2F1ThxWrMi%2FTYqMXqyttfbrpaUN1TV%2Fe%2BvSvE%2BprteJ3QlUIyyzrbd8Iaq4adRJmYwGwmyIu%2FN4EsIqQQwTxtqUupPgNdoU8cY0aNOTECQon6lBiqmOILelEUM4TdOtPBICW5fBWaEFZhbimpmU28HKXaGpF%2BvmmURVkQkfXqqZHRJiu84n3If2UbG%2Fdj0dOYj4uvgvHaOF%2BA8sS5kQscjNjhzAh9yRmOhX4o0roo87WznIy%2BWxWA6K17IrUohfuaeLKIzLiUJif8%2B5fUtP%2FxGyRqwhOJ2ZcDYJmq51BzRq%2BJ4IFyw6CQpMhsUAyFkhdU7cDD1t5vLBjq2Ah9xMCXeYPuhgQUXpFa7PFUvQbUkgc3QFGwGj15o6nzPpjYlsiJs8u7bdANJUSbaDMyElsJeG3ltKH%2Fu9Lv6rD02q4WAFmYLKd78wOYda3IPufp1mQK5typsC%2BVDG%2Fg9%2FynJdRAOha3jxcBR5XxBz%2Bo%2FJXgpQmZX94yMKC%2By99JOM%2FxNfa5SBTIClvvz07JKKDjZtWxz8ykUVGtIzBNMbPSX1iRRvUDKMz%2FRFkZY8YO5pw5G09tJ4LVPWic7dbUd%2Bc5JGfmEGM9WSJQKDkRr%2Fp3bCs2bEsECheSsKVqZZFZsNeIU9EwlDvW3NhUf1W6AU7Ys861Ff0L3jzMKkUyndzfrfqQcYBAFggxLQeVeWskhLb3zANi8k5w5FK3HEyJ7aNabLXitN8mIs6L%2FQlvoIZLaNV%2Fwl0c%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KRJT73SDZ%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021809Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=f0c7d256ba2dd4ac73b6fae0b4e3a87f2caac25da9fc83dcd6af33bda8adc91b',
         productId: '325',
       },
       {
         name: 'Filtro de carbón activado',
         description: 'Elimina impurezas y malos olores',
         price: '$25',
-        imageUrl: 'https://imagenestienda1.s3.us-east-1.amazonaws.com/filtros/Filtro%20de%20carb%C3%B3n%20activado.jpg',
+        imageUrl: 'https://chamorro132.s3.us-east-1.amazonaws.com/libros%20variados/va%204.jpg?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEsaCXVzLWVhc3QtMSJIMEYCIQCXS00ldD%2FRpFOwkeVUN4JYEDh4wOxhIud7K8X1ociEOQIhAJBDwptih%2BTQhYGre02%2Fq0sYB3dw%2FbM6qSoPgMC6nx0lKtsDCBMQBBoMNzkyMzg0MTIwNTMzIgwF5ex5QwTnrlOWOj4quAO%2BFOxyvlnjAmtN1TCeOAwPE37%2Bl2cuhphn27QlCBlNT%2BpSKFdd2Omd8TtdPHQPOPrIoCwn6PLOj%2Fi9ZLt6wWZCIeiYpVQPGdJLASzqu%2FjjRcqNM2cLkyu%2F6Wj6Jo0XoRVvwlKOKb7BCwVCPnQ4S3e14YSzqjRoN1dE539Z21hELcgfnjrRU6vUmJbWpVAHDr3ORPeYI3Uejbt%2BmLE1r2GyXJsCjLrYA%2BgqUyJWtWyubQW0agKTuTBTSfQzDwXbeHAFLQ%2ByHWC%2F1ThxWrMi%2FTYqMXqyttfbrpaUN1TV%2Fe%2BvSvE%2BprteJ3QlUIyyzrbd8Iaq4adRJmYwGwmyIu%2FN4EsIqQQwTxtqUupPgNdoU8cY0aNOTECQon6lBiqmOILelEUM4TdOtPBICW5fBWaEFZhbimpmU28HKXaGpF%2BvmmURVkQkfXqqZHRJiu84n3If2UbG%2Fdj0dOYj4uvgvHaOF%2BA8sS5kQscjNjhzAh9yRmOhX4o0roo87WznIy%2BWxWA6K17IrUohfuaeLKIzLiUJif8%2B5fUtP%2FxGyRqwhOJ2ZcDYJmq51BzRq%2BJ4IFyw6CQpMhsUAyFkhdU7cDD1t5vLBjq2Ah9xMCXeYPuhgQUXpFa7PFUvQbUkgc3QFGwGj15o6nzPpjYlsiJs8u7bdANJUSbaDMyElsJeG3ltKH%2Fu9Lv6rD02q4WAFmYLKd78wOYda3IPufp1mQK5typsC%2BVDG%2Fg9%2FynJdRAOha3jxcBR5XxBz%2Bo%2FJXgpQmZX94yMKC%2By99JOM%2FxNfa5SBTIClvvz07JKKDjZtWxz8ykUVGtIzBNMbPSX1iRRvUDKMz%2FRFkZY8YO5pw5G09tJ4LVPWic7dbUd%2Bc5JGfmEGM9WSJQKDkRr%2Fp3bCs2bEsECheSsKVqZZFZsNeIU9EwlDvW3NhUf1W6AU7Ys861Ff0L3jzMKkUyndzfrfqQcYBAFggxLQeVeWskhLb3zANi8k5w5FK3HEyJ7aNabLXitN8mIs6L%2FQlvoIZLaNV%2Fwl0c%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA3Q7OGE3KRJT73SDZ%2F20260114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260114T021828Z&X-Amz-Expires=10800&X-Amz-SignedHeaders=host&X-Amz-Signature=9a7988db9277bfd8714653c76360b8e19794885781bbc68ceecdd2d249453e0e',
         productId: '326',
       },
     ],
@@ -190,9 +190,9 @@ const Products = () => {
   return (
     <div className="products-container">
       <div className="category-menu">
-        <button onClick={() => handleCategoryChange('botellones')}>Libros Fisica</button>
-        <button onClick={() => handleCategoryChange('valvulas')}>Libros Matematicas</button>
-        <button onClick={() => handleCategoryChange('filtros')}>Libros Variados</button>
+        <button onClick={() => handleCategoryChange('matematica')}>Libros Fisica</button>
+        <button onClick={() => handleCategoryChange('fisica')}>Libros Matematicas</button>
+        <button onClick={() => handleCategoryChange('variado')}>Libros Variados</button>
       </div>
 
       <h1 className="category-title">{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h1>
