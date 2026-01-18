@@ -1,0 +1,47 @@
+name: Deploy Products Services to EC2
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Set up SSH key for EC2
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker images for login and register services
+      run: |
+
+        docker build -t chamorrito/cart ./Products-Domain/Cart
+
+    - name: Push images to Docker Hub
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker push chamorrito/cart
+
+    - name: Deploy services to EC2
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: 13.216.48.249
+        username: ec2-user
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          # De
+          docker stop cart || true
+          docker rm cart || true
+
+          # D
+          docker pull chamorrito/cart
+
+          # Eje
+          docker run -d --name cart -p 5002:5002 --restart unless-stopped chamorrito/cart
