@@ -1,10 +1,46 @@
-name: Deploy All Microservices to EC2
+name: Deploy in Production to EC2 Production
 
 on:
-  push:
+  pull_request:
     branches:
-      - test
+      - main  
 jobs:
+  deploy-Front:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Set up SSH key for EC2
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.EC2_SSH_KEYP }}
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker images for frontend
+      run: |
+        docker build -t chamorrito/my-react-app ./FrontEnd
+
+    - name: Push images to Docker Hub
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker push chamorrito/my-react-app
+
+    - name: Deploy services to EC2
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: 98.87.70.243
+        username: ec2-user
+        key: ${{ secrets.EC2_SSH_KEYP }}
+        script: |
+          docker stop my-react-app || true
+          docker rm my-react-app || true
+
+          docker pull chamorrito/my-react-app
+
+          docker run -d --name my-react-app -p 80:80 --restart unless-stopped chamorrito/my-react-app
+
   deploy-auth:
     name: Deploy Auth Services
     runs-on: ubuntu-latest
@@ -13,7 +49,7 @@ jobs:
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          ssh-private-key: ${{ secrets.EC2_SSH_KEYP }}
 
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -32,9 +68,9 @@ jobs:
       - name: Deploy Auth services to EC2
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: 3.92.9.164
+          host: 54.175.228.248
           username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: ${{ secrets.EC2_SSH_KEYP }}
           script: |
             docker stop login-service || true
             docker rm login-service || true
@@ -56,7 +92,7 @@ jobs:
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          ssh-private-key: ${{ secrets.EC2_SSH_KEYP }}
 
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -77,9 +113,9 @@ jobs:
       - name: Deploy Products services to EC2
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: 13.216.48.249
+          host: 3.93.94.180
           username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: ${{ secrets.EC2_SSH_KEYP }}
           script: |
             docker stop review || true
             docker rm review || true
@@ -105,7 +141,7 @@ jobs:
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          ssh-private-key: ${{ secrets.EC2_SSH_KEYP }}
 
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -126,9 +162,9 @@ jobs:
       - name: Deploy User services to EC2
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: 52.3.240.18
+          host: 54.173.11.82
           username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: ${{ secrets.EC2_SSH_KEYP }}
           script: |
             docker stop change-password || true
             docker rm change-password || true
