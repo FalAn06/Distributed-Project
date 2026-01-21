@@ -122,7 +122,7 @@ const Products = () => {
     };
 
     try {
-      const response = await fetch(`http://13.216.48.249:5000/review`, {
+      const response = await fetch(`http://13.216.48.249:5000/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reviewData),
