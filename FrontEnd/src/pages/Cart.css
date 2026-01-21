@@ -1,0 +1,75 @@
+/* Estilos generales del contenedor del carrito */
+.cart-container {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0f7fa; /* Fondo azul claro */
+}
+
+/* Título del carrito */
+.cart-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00796b;
+  margin-bottom: 2rem;
+}
+
+/* Contenedor de los productos en el carrito */
+.cart-items {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilo para cada item del carrito */
+.cart-item {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón para eliminar producto del carrito */
+.remove-button {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #9a0007;
+}
+
+/* Estilo del botón para regresar a los productos */
+.back-button-container {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.back-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #004d40;
+}

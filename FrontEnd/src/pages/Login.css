@@ -1,0 +1,152 @@
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================ */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #2575fc,
+    #ffffff
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===============================
+   CAJA DE LOGIN
+================================ */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #2575fc;
+}
+
+/* ===============================
+   LOGO IMAGEN
+================================ */
+.login-logo-img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 90px;
+  height: auto;
+}
+
+
+.login-logo-top {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: auto;
+}
+
+/* ===============================
+   LOGO TEXTO (WATER MARKET)
+================================ */
+.login-logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2575fc;
+  margin-bottom: 1rem;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ===============================
+   TITULO
+================================ */
+.login-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2575fc;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ===============================
+   INPUTS
+================================ */
+.login-input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #2575fc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f4f8ff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: #1a5fd0;
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.2);
+}
+
+/* ===============================
+   BOTÓN LOGIN
+================================ */
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #2575fc;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-button:hover {
+  background-color: #1a5fd0;
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.login-footer {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #2575fc;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ===============================
+   LINKS
+================================ */
+.login-link {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #1a5fd0;
+}
