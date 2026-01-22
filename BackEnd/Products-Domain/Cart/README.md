@@ -1,9 +1,9 @@
 
-# Cart Microservice 🛒 - E-commerce Shopping Cart Management
+# Cart Microservice 🛒 - Biblioteca Cart Management
 
 ## 📦 Project Overview
 
-The **Cart Microservice** is part of the **Products-Domain** repository and is responsible for handling shopping cart functionality in an e-commerce platform. It allows users to **add**, **get**, and **remove** products from their shopping cart. Built using **Python** and **Flask**, this microservice follows a **RESTful** architecture and is containerized using **Docker** for easy deployment.
+The **Cart Microservice** is part of the **Products-Domain** repository and is responsible for handling shopping cart functionality in an biblioteca platform. It allows users to **add**, **get**, and **remove** products from their shopping cart. Built using **Python** and **Flask**, this microservice follows a **RESTful** architecture and is containerized using **Docker** for easy deployment.
 
 ### 🚀 Main Features:
 - **Add to Cart**: Add products to the shopping cart.
