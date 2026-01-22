@@ -52,7 +52,7 @@ function Dashboard() {
 
   // Función para obtener la frase aleatoria desde el microservicio
   const getFrase = () => {
-    fetch('http://52.3.240.18:5000/graphql', {
+    fetch('http://54.173.11.82/api/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

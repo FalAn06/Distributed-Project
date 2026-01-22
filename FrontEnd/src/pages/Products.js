@@ -122,7 +122,7 @@ const Products = () => {
     };
 
     try {
-      const response = await fetch(`http://13.216.48.249:5000/reviews`, {
+      const response = await fetch(`http://3.93.94.180/api/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reviewData),
@@ -144,7 +144,7 @@ const Products = () => {
   // Función para obtener reseñas de un producto
   const fetchReviews = async (productId) => {
     try {
-      const response = await fetch(`http://13.216.48.249:5001/reviews?productId=${productId}`);
+      const response = await fetch(`http://3.93.94.180:5001/reviews?productId=${productId}`);
       const data = await response.json();
       setReviews(prevReviews => ({ ...prevReviews, [productId]: data.reviews }));
     } catch (error) {
@@ -159,7 +159,7 @@ const Products = () => {
     };
 
     try {
-      const response = await fetch('http://13.216.48.249:5002/cart', {
+      const response = await fetch('http://3.93.94.180/api/cart', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(cartData),
