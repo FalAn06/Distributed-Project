@@ -1,51 +1,58 @@
+# ⭐ Biblioteca Integral FICA – Get_review Microservice
 
-# Products-Domain 🛒 - Microservices for Product Management 🔧
+This directory contains the **Get_review microservice**, part of the Products Domain of the Biblioteca Integral FICA backend. This microservice is developed in **Python** and is focused exclusively on **retrieving book reviews** efficiently for the frontend.
 
-## 📦 Project Overview
+It follows a **simple, clean architecture** optimized for read-only operations, ensuring fast responses and easy scalability.
 
-**Products-Domain** is a collection of microservices built using **Python** designed for handling product-related functionalities in an e-commerce platform. This repository contains services for managing product reviews, shopping cart operations, and fetching product reviews. These microservices work together to provide a seamless product management experience.
+## 🏗 Architecture Overview
 
-### 🚀 Main Features:
-- **Cart Service**: Handles the shopping cart functionality, allowing users to add, remove, and view products in their cart.
-- **Get Review Service**: Allows users to fetch existing reviews for products.
-- **Review Service**: Allows users to submit reviews for products.
+The Get_review microservice uses a **layered architecture** combined with the **Service Layer Pattern**, where each folder has a clearly defined responsibility:
 
-## 🔧 Technologies Used
+- **Models layer**: Handles data structures and database access for reviews.
+- **Services layer**: Contains the business logic for fetching and processing reviews.
+- **Application layer**: Exposes API endpoints and initializes the service.
 
-- **Python** 🐍: The primary language used for building the microservices.
-- **Flask** 🖥️: A micro web framework used to build the APIs for the services.
-- **Docker** 🐳: Containerization of the microservices for easy deployment and scalability.
+This separation keeps the microservice lightweight and focused on retrieval operations.
 
-## 🔍 Repository Structure
-
-Here’s a quick overview of the folder structure in the repository:
+## 📁 Folder Structure
 
 ```
-├── .github/workflows/  - GitHub Actions workflows for CI/CD 🚀
-├── Cart/               - Microservice to manage the shopping cart 🛒
-├── Get_review/         - Microservice to fetch product reviews 📝
-├── Reviews/            - Microservice to post product reviews ✍️
-├── README.md           - This file 📄
+Get_review/
+├── models/        # Review data models and database queries
+├── services/      # Business logic for retrieving reviews
+├── app.py         # Application entry point and API routes
+├── config.py      # Configuration settings (DB, environment variables)
+├── Dockerfile     # Docker configuration for deployment
+└── README.md      # Get_review microservice documentation
 ```
 
-## 🎯 Purpose of the Project
+## 🎯 Design Patterns Used
 
-This set of microservices is designed to manage the product domain for an e-commerce platform. The services allow for:
-- **Cart Management**: Users can add and remove products from their cart.
-- **Review Management**: Users can read and write reviews for products.
+### 🧠 Service Layer Pattern
+All logic for fetching reviews is encapsulated in the **services** layer:
+- Keeps the application entry point clean
+- Makes logic reusable and testable
+- Allows easy future extensions (filters, pagination, sorting)
 
-## ⚙️ How It Works
+### 📦 Single Responsibility Principle
+This microservice is **read-only** and focused only on:
+- Retrieving reviews by book ID
+- Returning structured review data to the frontend
 
-1. **Cart Service**: Manages the cart state and operations like adding/removing items. Exposes APIs that communicate with the product catalog.
-2. **Get Review Service**: Fetches reviews from a database or another external service, allowing users to view product feedback.
-3. **Review Service**: Accepts new reviews from users and stores them for later retrieval.
+This clear responsibility improves performance and maintainability.
 
-## 🌟 Future Enhancements
-- Integration with product search 🛍️
-- Admin interface for managing products and reviews 🖥️
-- Improved scalability with message queues or event-driven architecture 🚀
+### 🔄 Separation of Concerns
+- **Models** handle data access
+- **Services** handle business rules
+- **app.py** handles request/response flow
 
-## 💬 Contact Information
-For any questions or contributions, feel free to reach out to me through my GitHub profile!
+## 🛠 Technologies Used
+- **Python**
+- **Flask / FastAPI**
+- **Docker**
+- **REST API**
+- Database integration (MongoDB / SQL, depending on configuration)
 
-Happy coding! 👨‍💻👩‍💻
+## 🚀 Purpose
+
+The Get_review microservice allows Biblioteca Integral FICA to efficiently display user reviews for books, helping students make informed rental decisions. Its minimal and focused design ensures high performance and easy scaling as review data grows.

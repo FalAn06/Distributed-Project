@@ -10,7 +10,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch('http://13.216.48.249:5002/cart');
+        const response = await fetch('http://3.93.94.180/api/cart');
         const data = await response.json();
         setCartItems(data.cart);
       } catch (error) {
@@ -24,7 +24,7 @@ const Cart = () => {
   // Función para eliminar un producto del carrito
   const handleRemoveFromCart = async (productId) => {
     try {
-      const response = await fetch(`http://13.216.48.249:5002/cart/${productId}`, {
+      const response = await fetch(`http://3.93.94.180:5002/cart/${productId}`, {
         method: 'DELETE',
       });
       const data = await response.json();

@@ -3,7 +3,7 @@
 
 ## 📦 Project Overview
 
-The **Reviews Microservice** is part of the **Products-Domain** repository and is responsible for handling product review submissions in an e-commerce platform. This service allows users to submit their reviews for products, which are then stored in the database. The microservice is built using **Python** and **Flask** and follows a **RESTful** architecture. It is containerized using **Docker** for easy deployment.
+The **Reviews Microservice** is part of the **Products-Domain** repository and is responsible for handling product review submissions in an platform. This service allows users to submit their reviews for products, which are then stored in the database. The microservice is built using **Python** and **Flask** and follows a **RESTful** architecture. It is containerized using **Docker** for easy deployment.
 
 ### 🚀 Main Features:
 - **Submit Review**: Allows users to submit their review for a specific product.
